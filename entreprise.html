@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Présentation Entreprise</title>
+	<link rel="stylesheet"  href="styleEntreprise.css">
+</head>
+
+<header>
+
+    <head>
+        <title>VITASHIELD</title>
+        <link rel="stylesheet" type="text/css" href="styleSite.css">
+      </head>
+     
+    <div id="logo">
+      <img src="assets/image/logo vita shield.png" alt="Logo de votre entreprise" >
+    </div>
+
+ 
+
+    <div id="butAndDesc">
+    <div id="buttons">
+      <ul>
+        <li><a href="entreprise.html" onmouseenter="descToEntreprise()" onmouseleave="descEmpty()" >Entreprise</a></li>
+        <li><a href="produits.html" onmouseenter="descToProduits()" onmouseleave="descEmpty()">Produits</a></li>
+        <li><a href="faq.html" onmouseenter="descToFAQ()" onmouseleave="descEmpty()">FAQ</a></li>
+      </ul>
+    </div>
+    <p id="descriptionBoutonText"></p>
+    </div>
+    
+  
+
+    <div class="menu" id="allCapteur">
+      <a href="#">Notre Coque</a>
+      <ul>
+        <li><a href="#" onclick="toCardiaque()" >Capteur cardiaque</a></li>
+        <li><a href="#" onclick="toTemperature()"  >Capteur de température</a></li>
+        <li><a href="#" onclick="toLED()" >LED RGB personnalisable</a></li>
+        <li><a href="#" onclick="toSON()" >Capteur son</a></li>
+      </ul>
+    </div>
+
+
+    <div class="container" id="icon">
+        <ul>
+        <li><a href="connexion.html"><img src="assets/image/icon connexion.png" alt="connexion"></a></li>
+        <li><img src="assets/image/icon loupe.png" alt="recherche"></li>
+        <li><img src="assets/image/icon cart.png" alt="panier"></li>
+        </ul>
+      </div>
+      <div class="colonneLangue">
+        <img src="assets/image/langue/france.png" onclick="toFrancais()" alt="france">
+        <img src="assets/image/langue/anglais.png" onclick="toAnglais()" alt="anglais">
+        <img src="assets/image/langue/espagnol.png" onclick="toEspagnol()"  alt="espagnol">
+      </div>
+      
+    
+  </header>
+
+
+
+<body>
+	<div class="parallax">
+		<div class="parallax-box">
+			<p id="parallax-text">Présentation de l'équipe</p>
+		  </div>
+	<div class="container">
+		<div class="profile">
+			<img src="assets/image/langue/espagnol.png" alt="Photo de profil 1">
+			<h2>Nom du profil 1</h2>
+			<p>Description du profil 1</p>
+		</div>
+		<div class="profile">
+			<img src="assets/image/langue/france.png" alt="Photo de profil 2">
+			<h2>Nom du profil 2</h2>
+			<p>Description du profil 2</p>
+		</div>
+		<div class="profile">
+			<img src="assets/image/langue/france.png" alt="Photo de profil 3">
+			<h2>Nom du profil 3</h2>
+			<p>Description du profil 3</p>
+		</div>
+		<div class="profile">
+			<img src="assets/image/langue/france.png" alt="Photo de profil 4">
+			<h2>Nom du profil 4</h2>
+			<p>Description du profil 4</p>
+		</div>
+		<div class="profile">
+			<img src="assets/image/langue/france.png" alt="Photo de profil 5">
+			<h2>Nom du profil 5</h2>
+			<p>Description du profil 5</p>
+		</div>
+		<div class="profile">
+			<img src="assets/image/langue/france.png" alt="Photo de profil 5">
+			<h2>Nom du profil 5</h2>
+			<p>Description du profil 5</p>
+		</div>
+	</div>
+	</div>
+</body>
+
+
+
+<script>
+
+const parallaxText = document.querySelector('.parallax-box');
+const parallaxSpeed = 0.8; // vitesse de défilement souhaitée
+
+window.addEventListener('scroll', () => {
+	
+  const scrollPosition = window.pageYOffset; // position de scroll actuelle
+  
+  if(window.pageYOffset>100){
+  	const parallaxPosition = scrollPosition * parallaxSpeed; // calcul de la nouvelle position
+ 	 parallaxText.style.top = `${parallaxPosition}px`; // applique la nouvelle position
+	}
+});
+
+</script>
+
+
+</html>
+
+

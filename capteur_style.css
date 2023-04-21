@@ -1,0 +1,203 @@
+
+
+
+body{
+	background-image: url('assets/image/capteur/background.png');
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+
+
+header {
+	position:  absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #ffffff;
+	padding: 10px;
+	width: 100%;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo img {
+	height: 40px;
+  }
+ 
+
+  
+
+
+
+
+.floating-image:hover .dropdown-child {
+    display: block;
+}
+.test:hover{
+	font-size: 50px;
+	
+}
+  
+  
+  .user-info {
+	display: flex;
+	align-items: center;
+  }
+  
+  .user-info img {
+	height: 30px;
+	margin-left: 10px;
+  }
+  
+
+
+
+/* Centrer l'image principale */
+.center-image {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+	height: 40%;
+	width: auto;
+  }
+  
+  /* Ajouter les images flottantes */
+  .floating-image {
+	position: absolute;
+	z-index: 2;
+	height: 10%;
+	width: auto;
+	border : 3px solid #FFE18B;
+	border-radius: 15%;
+	transition: height 0.3s;
+	animation: float1 3s linear infinite;
+
+  }
+  
+  .floating-image:hover{
+	height: 15%;
+	width: auto;
+	border-radius: 20px;
+	border : 5px solid #FFE18B;
+  }
+
+
+
+  @keyframes float1 {
+	0% {
+	  transform: translate(0%,0%);
+	}
+	19% {
+		transform: translate(15%,15%);
+	  }
+	43% {
+	  transform: translate(0%,30%);
+	}
+	75% {
+		transform: translate(-15%,15%);
+	  }
+	100% {
+	  transform: translate(0%,0%);
+	}
+  }
+  @keyframes float2 {
+	0% {
+	  transform: translate(0%,0%);
+	}
+	25% {
+		transform: translate(-15%,-15%);
+	  }
+	50% {
+	  transform: translate(0%,-30%);
+	}
+	75% {
+		transform: translate(15%,-15%);
+	  }
+	100% {
+	  transform: translate(0%,0%);
+	}
+  }
+
+  @keyframes float3 {
+	0% {
+	  transform: translate(0%,0%);
+	}
+	30% {
+		transform: translate(17%,13%);
+	  }
+	59% {
+	  transform: translate(27%,0%);
+	}
+	83% {
+		transform: translate(-17%,-13%);
+	  }
+	100% {
+	  transform: translate(0%,0%);
+	}
+  }
+
+
+  @keyframes float4 {
+	0% {
+	  transform: translate(0%,0%);
+	}
+	22% {
+		transform: translate(20%,10%);
+	  }
+	56% {
+	  transform: translate(-7%,-16%);
+	}
+	80% {
+		transform: translate(7%,13%);
+	  }
+	100% {
+	  transform: translate(0%,0%);
+	}
+  }
+
+
+
+
+
+
+  /* Définir les positions des images flottantes */
+  #image1 {
+	top: 30%;
+	left: 30%;
+	animation: float1 2.8s linear infinite;
+
+  }
+  
+  #image2 {
+	top: 25%;
+	right: 33%;
+	animation: float2 3s linear infinite;
+
+  }
+  
+  #image3 {
+	top: 45%;
+	left: 25%;
+	animation: float3 3.2s linear infinite;
+  }
+  
+  #image4 {
+	top: 51%;
+	right: 22%;
+	animation: float4 3.8s linear infinite;
+  }
+  
+  #image5 {
+	top: 65%;
+	left: 42%;
+  }
+ 
+
+
+
+
+
+  

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mon super titre</title>
+	<link rel="stylesheet" type="text/css" href="all_capteur.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<header>
+        
+            <div class="title">
+                
+
+        <ul class="titleIcon">
+            <li class="listTitle"><h1>Capteur cardiaque</h1></li>
+            <li class="listTitle"><img class="icon_img" src="assets/image/capteur/icon coeur.png" alt="capteur"></li>
+
+        </ul>
+		<nav>
+			<ul>
+				<li><a href="#">Capteur sonore</a></li>
+				<li><a href="#">Capteur température</a></li>
+				<li><a href="#">Capteur particules</a></li>
+				<li><a href="#">LED</a></li>
+			</ul>
+		</nav>
+    </div>
+
+    <div class="image-container">
+        <img src="assets/image/icon/user.png" alt="image1">
+        <img src="assets/image/icon/setting.png" alt="image2">
+      </div>
+        
+	</header>
+	
+    <div class="container">
+        <div class="item large">
+            <h1>84BPM</h1>
+        </div>
+        <div class="item">
+            <H2>BPM optimale</H2>
+            78
+        </div>
+
+        <div class="item large">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="item small"></div>
+        <div class="item small"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item large"></div>
+      </div>
+	
+
+      <script>
+        const data = [85,92,70,77,80,99,68,75,90];
+
+        const config = {
+            type: 'line',
+            data: {
+                labels: ['8h', '9h', '10h', '11h', '12h', '13h', '14h', '15h','16h'],
+                datasets: [{
+                label: 'BPM moyen',
+                data: data,
+                backgroundColor: 'blue'
+                }]
+            },
+            options: {
+                scales: {
+                yAxes: [{
+                    ticks: {
+                    beginAtZero: true
+                    }
+                }]
+                }
+            }
+            };
+
+            const myChart = new Chart(document.getElementById('myChart'), config);
+
+
+
+      </script>
+
+
+
+
+</body>
+
+
+</html>
