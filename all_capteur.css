@@ -1,13 +1,13 @@
 header {
-    
+  
 	display: flex;
     width: 100%;
-	background-color: #333;
+	background-color: #002443;
 	color: #fff;
 	padding: 20px;
     justify-content: space-between;
     align-items: flex-end;
-
+  width: 100%;
    
 }
 
@@ -118,11 +118,11 @@ nav a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    
+    width: 100%;
     margin: 0 auto;
     border: 1px solid black;
     padding: 20px;
-    background-image:url('Captura\ de\ Pantalla\ 2023-02-14\ a\ la\(s\)\ 17.54\ 2.png') ;
+    background-image:url('assets/image/background/back.png') ;
   }
   
   /* styles pour les sous-parties */
