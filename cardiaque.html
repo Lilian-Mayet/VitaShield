@@ -46,6 +46,20 @@
             <canvas id="myChart"></canvas>
         </div>
 
+        <div class="item">
+            <div class="color_info">
+                <div class="row">
+                  <div class="text_info">Dangeureux</div>
+                  <div class="square1"></div>
+                </div>
+                <div class="row">
+                  <div class="text_info">Normal</div>
+                  <div class="square2"></div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="item small"></div>
         <div class="item small"></div>
         <div class="item"></div>
@@ -55,7 +69,7 @@
 	
 
       <script>
-        const data = [85,92,70,77,80,99,68,75,90];
+        const data = [85,92,35,77,80,140,68,75,90];
 
         const config = {
             type: 'line',
@@ -64,7 +78,18 @@
                 datasets: [{
                 label: 'BPM moyen',
                 data: data,
-                backgroundColor: 'blue'
+                backgroundColor: 'blue',
+                pointBackgroundColor: data.map(value => {
+                        if (value < 50) {
+                            return 'red';
+                        } else if (value > 120) {
+                            return 'red';
+                        } else {
+                            return 'blue';
+                        }
+                    })
+
+
                 }]
             },
             options: {
