@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<?php
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
+
+<!DOCTYPE php>
+
 <html>
   <head>
     <title>Site Web avec Images Flottantes</title>
@@ -11,17 +26,37 @@
         <img src="assets/image/logo vita shield.png" alt="Votre logo">
       </div>
 
+      
 
-    
-      <div class="user-info">
-        <a href="#"><img src="icone-profil.png" alt="Votre profil"></a>
-        <a href="#"><img src="icone-parametre.png" alt="Paramètres"></a>
+      <div class="content">
+  	<!-- notification message -->
+  	<?php if (isset($_SESSION['success'])) : ?>
+      <div class="error success" >
+      	<h3>
+          <?php 
+          	echo $_SESSION['success']; 
+          	unset($_SESSION['success']);
+          ?>
+      	</h3>
       </div>
+  	<?php endif ?>
+
+    <!-- logged in user information -->
+    <?php  if (isset($_SESSION['username'])) : ?>
+    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+    <?php endif ?>
+
     </header>
   
 
     <div id="all_capteur" >
       
+    
+
+    
+
+
     <img src="assets/image/capteur/main image.png" class="center-image" id="center_image"  alt="Image principale">
   
     <img src="assets/image/capteur/icon dust.png" id="image1" class="floating-image" alt="Image flottante 1">
@@ -134,4 +169,4 @@ setInterval(drawLine, 0);
 
 
   </body>
-</html>
+
