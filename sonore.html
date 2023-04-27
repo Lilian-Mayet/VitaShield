@@ -12,13 +12,13 @@
                 
 
         <ul class="titleIcon">
-            <li class="listTitle"><h1>Capteur cardiaque</h1></li>
-            <li class="listTitle"><img class="icon_img" src="assets/image/capteur/icon coeur.png" alt="capteur"></li>
+            <li class="listTitle"><h1>Capteur sonore</h1></li>
+            <li class="listTitle"><img class="icon_img" src="assets/image/capteur/icon son.png" alt="capteur"></li>
 
         </ul>
 		<nav>
 			<ul>
-				<li><a href="sonore.html">Capteur sonore</a></li>
+				<li><a href="cardiaque.html">Capteur cardiaque</a></li>
 				<li><a href="#">Capteur température</a></li>
 				<li><a href="#">Capteur particules</a></li>
 				<li><a href="#">LED</a></li>
@@ -35,15 +35,14 @@
 	
     <div class="container">
         <div class="item large">
-            <h1>84BPM</h1>
+            
         </div>
         <div class="item">
-            <H2>BPM optimale</H2>
-            78
+   
         </div>
 
         <div class="item large">
-            <canvas id="myChart"></canvas>
+        
         </div>
 
         <div class="item small"></div>
@@ -54,35 +53,8 @@
       </div>
 	
 
-      <script>
-        const data = [85,92,70,77,80,99,68,75,90];
+     
 
-        const config = {
-            type: 'line',
-            data: {
-                labels: ['8h', '9h', '10h', '11h', '12h', '13h', '14h', '15h','16h'],
-                datasets: [{
-                label: 'BPM moyen',
-                data: data,
-                backgroundColor: 'blue'
-                }]
-            },
-            options: {
-                scales: {
-                yAxes: [{
-                    ticks: {
-                    beginAtZero: true
-                    }
-                }]
-                }
-            }
-            };
-
-            const myChart = new Chart(document.getElementById('myChart'), config);
-
-
-
-      </script>
 
 
 
