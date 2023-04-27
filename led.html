@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mon super titre</title>
+	<link rel="stylesheet" type="text/css" href="all_capteur.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<header>
+        
+            <div class="title">
+                
+
+        <ul class="titleIcon">
+            <li class="listTitle"><h1>LED RGB</h1></li>
+            <li class="listTitle"><img class="icon_img_led" src="assets/image/capteur/icon led.png" alt="capteur"></li>
+
+        </ul>
+		<nav>
+			<ul>
+				<li><a href="sonore.html">Capteur sonore</a></li>
+				<li><a href="cardiaque.html">Capteur cardiaque</a></li>
+				<li><a href="#">Capteur particules</a></li>
+				<li><a href="temperaure.html">Capteur temperature</a></li>
+			</ul>
+		</nav>
+    </div>
+
+    <div class="image-container">
+        <img src="assets/image/icon/user.png" alt="image1">
+        <img src="assets/image/icon/setting.png" alt="image2">
+      </div>
+        
+	</header>
+	
+    <div class="container">
+        <div class="item_choix">
+            <h2>Choix du capteur</h2>
+            <div class = "choice_capteur">
+            <div class="ligne_choix">
+                <img src="assets/image/capteur/icon coeur.png" alt="Image 1">
+                <p>Texte de la ligne 1</p>
+                <input type="radio" name="option" id="option1">
+               
+              </div>
+              <div class="ligne_choix">
+                <img src="assets/image/capteur/icon dust.png" alt="Image 2">
+                <p>Texte de la ligne 2</p>
+                <input type="radio" name="option" id="option2">
+                
+              </div>
+              <div class="ligne_choix">
+                <img src="assets/image/capteur/icon son.png" alt="Image 3">
+                <p>Texte de la ligne 3</p>
+                <input type="radio" name="option" id="option3">
+             
+              </div>
+              <div class="ligne_choix">
+                <img src="assets/image/capteur/icon temperature.png" alt="Image 4">
+                <p>Texte de la ligne 4</p>
+                <input type="radio" name="option" id="option4">
+                
+              </div>
+ 
+
+            </div>
+
+
+        </div>
+        <div class="item" id = "div-image" style="height: 150px;justify-content: center;">
+            <h2 style="text-decoration: underline;">Capteur actuel</h2>
+            <div class ="ligne_choix" style="margin: 10px;">
+            <img src="assets/image/capteur/icon son.png" id="img_capteur" >
+            <p id="text_capteur">capteur son</p>
+        </div>
+        </div>
+
+        <div class="item large">
+            
+        </div>
+
+
+
+
+
+        <div class="item small"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item large"></div>
+      </div>
+	
+
+      <script>
+const choix = document.getElementsByName('option'); // Récupération de tous les éléments ayant le nom "choix"
+
+for (let i = 0; i < choix.length; i++) { // Parcours de tous les éléments
+  choix[i].addEventListener('click', function() { // Ajout d'un écouteur d'événements "click" à chaque élément
+    const text = document.getElementById('text_capteur');
+    const image = document.getElementById('img_capteur'); // Récupération de l'élément img dans la div
+    switch (i) { // Utilisation d'un switch pour changer l'image en fonction de la valeur de l'élément cliqué
+      case 0:
+        image.src = "assets/image/capteur/icon coeur.png";
+        text.innerText = "Capteur cardiaque";
+        break;
+      case 1:
+        image.src = "assets/image/capteur/icon dust.png";
+        text.innerText = "Capteur particules";
+        break;
+      case 2:
+        image.src = "assets/image/capteur/icon son.png";
+        text.innerText = "Capteur sonore";
+        break;
+      case 3:
+        image.src = "assets/image/capteur/icon temperature.png";
+        text.innerText = "Capteur température";
+        break;
+
+      default:
+        console.log('Choix invalide'); // Si la valeur ne correspond à aucun des cas, afficher un message d'erreur
+    }
+  });
+}
+
+      </script>
+
+
+
+
+</body>
+
+
+</html>
