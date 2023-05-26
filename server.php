@@ -19,7 +19,7 @@ function calculerAge($dateNaissance) {
 }
 
 
-// initializing variables
+// Initialisation
 $username = "";
 $email    = "";
 $errors = array(); 
@@ -28,7 +28,7 @@ $id = 0;
 $birthdate = "1900-01-01";
 $age = 50;
 
-// connect to the database
+// Connexion à la database
 $db = mysqli_connect('localhost', 'root', '', 'project');
 
 $_SESSION["patient"]="";
@@ -58,8 +58,7 @@ if (isset($_POST['reg_user'])) {
 	array_push($errors, "Les deux mots de passe ne sont pas identiques");
   }
 
-  // first check the database to make sure 
-  // a user does not already exist with the same username and/or email
+  // Verification que la personne n'est pas déjà inscrite
   $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
@@ -145,7 +144,7 @@ if (isset($_POST['reg_user'])) {
   }
 }
 
-// LOGIN USER
+// Page de connexion
 if (isset($_POST['login_user'])) {
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
