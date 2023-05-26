@@ -49,6 +49,19 @@ header {
   
 }
 
+
+
+.welcome-message {
+  font-size: 24px;
+  color: yellow;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.welcome-message strong {
+  font-size: 28px;
+}
+
+
 @keyframes anim_logo {
 	0% {
 	  transform: scale(100%);
