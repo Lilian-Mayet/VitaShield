@@ -38,46 +38,44 @@ $max_safe_particules = $result["max_safe_particules"];
 <html>
 <head>
     <title>Formulaire PHP</title>
+    <link rel="stylesheet" type="text/css" href="medecin.css">
 </head>
 <body>
     <form method="post" action="medecin_edit.php">
-        <label for="texte">username :</label>
-        <input type="text" name="username" id="texte" value=<?php echo $username;    ?> /><br/><br/>
+        <label for="texte">Username:</label>
+        <input type="text" name="username" id="texte" value="<?php echo $username; ?>" /><br/><br/>
 
-        <label for="numero1">Email :</label>
-        <input type="text" name="email" id="texte" value=<?php echo $email;    ?> /><br/><br/>
+        <label for="numero1">Email:</label>
+        <input type="text" name="email" id="texte" value="<?php echo $email; ?>" /><br/><br/>
 
-        <label for="numero1">Age :</label>
-        <input type="number" name="age" id="age" value=<?php echo $age; ?> /><br/><br/>
+        <label for="numero1">Age:</label>
+        <input type="number" name="age" id="age" value="<?php echo $age; ?>" /><br/><br/>
 
+        <label for="numero1">Seuil minimum BPM:</label>
+        <input type="number" name="seuil_min_cardiaque" id="seuil_min_cardiaque" value="<?php echo $min_safe_cardiaque; ?>" /><br/><br/>
 
-        <label for="numero1">Seuil minimum BPM :</label>
-        <input type="number" name="seuil_min_cardiaque" id="seuil_min_cardiaque" value=<?php echo $min_safe_cardiaque; ?> /><br/><br/>
+        <label for="numero2">Seuil maximum BPM:</label>
+        <input type="number" name="seuil_max_cardiaque" id="seuil_max_cardiaque" value="<?php echo $max_safe_cardiaque; ?>" /><br/><br/>
 
-        <label for="numero2">Seuil maximum BPM :</label>
-        <input type="number" name="seuil_max_cardiaque" id="seuil_max_cardiaque" value=<?php echo $max_safe_cardiaque; ?> /><br/><br/>
+        <label for="numero3">Seuil minimum sonore:</label>
+        <input type="number" name="seuil_min_sonore" id="seuil_min_sonore" value="<?php echo $min_safe_sonore; ?>" /><br/><br/>
 
-        <label for="numero3">Seuil minimum sonore :</label>
-        <input type="number" name="seuil_min_sonore" id="seuil_min_sonore" value=<?php echo $min_safe_sonore; ?> /><br/><br/>
+        <label for="numero4">Seuil maximum sonore:</label>
+        <input type="number" name="seuil_max_sonore" id="seuil_max_sonore" value="<?php echo $max_safe_sonore; ?>" /><br/><br/>
 
-        <label for="numero4">Seuil maximum sonore :</label>
-        <input type="number" name="seuil_max_sonore" id="seuil_max_sonore" value=<?php echo $max_safe_sonore; ?> /><br/><br/>
+        <label for="numero5">Seuil minimum temperature:</label>
+        <input type="number" name="seuil_min_temperature" id="seuil_min_temperature" value="<?php echo $min_safe_temperature; ?>" /><br/><br/>
 
-        <label for="numero5">Seuil minimum temperature :</label>
-        <input type="number" name="seuil_min_temperature" id="seuil_min_temperature" value=<?php echo $min_safe_temperature; ?> /><br/><br/>
+        <label for="numero6">Seuil maximum temperature:</label>
+        <input type="number" name="seuil_max_temperature" id="seuil_max_temperature" value="<?php echo $max_safe_temperature; ?>" /><br/><br/>
 
-        <label for="numero6">Seuil maximum temperature :</label>
-        <input type="number" name="seuil_max_temperature" id="seuil_max_temperature" value=<?php echo $max_safe_temperature; ?> /><br/><br/>
+        <label for="numero5">Seuil minimum particules:</label>
+        <input type="number" name="seuil_min_particules" id="seuil_min_particules" value="<?php echo $min_safe_particules; ?>" /><br/><br/>
 
-        <label for="numero5">Seuil minimum particules :</label>
-        <input type="number" name="seuil_min_particules" id="seuil_min_particules" value=<?php echo $min_safe_temperature; ?> /><br/><br/>
-
-        <label for="numero6">Seuil maximum particules :</label>
-        <input type="number" name="seuil_max_particules" id="seuil_max_particules" value=<?php echo $max_safe_particules; ?> /><br/><br/>
+        <label for="numero6">Seuil maximum particules:</label>
+        <input type="number" name="seuil_max_particules" id="seuil_max_particules" value="<?php echo $max_safe_particules; ?>" /><br/><br/>
 
         <input type="submit" name="user_edit" />
-
-        
     </form>
 </body>
 

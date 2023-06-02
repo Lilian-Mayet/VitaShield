@@ -13,63 +13,43 @@
   }
 ?>
 
-<!DOCTYPE php>
+<!DOCTYPE html>
 
 <html>
   <head>
-    <title>Site Web avec Images Flottantes</title>
+    <title>Vitashield</title>
     <link rel="stylesheet" type="text/css" href="capteur_style.css">
   </head>
+
+
+
+
+
   <body>
 
-    <header>
-      <div class="logo">
-        <img src="assets/image/logo vita shield.png" alt="Votre logo">
-      </div>
-
- 
-
-
-
-
-
-
-      <div class="content">
-  	<!-- notification message -->
-  	<?php if (isset($_SESSION['success'])) : ?>
-      <div class="error success" >
-      	<h3>
-          <?php 
-          	echo $_SESSION['success']; 
-          	unset($_SESSION['success']);
-          ?>
-      	</h3>
-      </div>
-  	<?php endif ?>
-
-    <!-- logged in user information -->
-    <?php  if (isset($_SESSION['username'])) : ?>
-    	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
-    <?php endif ?>
-
-    </header>
+  
   
 
+    
+    
+
+
+
+    
     <div id="all_capteur" >
-      
+   
     
 
     
 
 
-    <img src="assets/image/capteur/main image.png" class="center-image" id="center_image"  alt="Image principale">
+     <a href = "faq.php"> <img src="assets/image/capteur/main image.png" class="center-image" id="center_image"  alt="Image principale"> </a>
   
     <img src="assets/image/capteur/icon dust.png" id="image1" class="floating-image" alt="Image flottante 1">
     
     <a href="led.html"><img src="assets/image/capteur/icon led.png" id="image2" class="floating-image" alt="Image flottante 2"></a>
     
-    <a href="temperaure.html"><img src="assets/image/capteur/icon temperature.png" id="image3" class="floating-image" alt="Image flottante 3"></a>
+    <a href="temperature.php"><img src="assets/image/capteur/icon temperature.png" id="image3" class="floating-image" alt="Image flottante 3"></a>
     
     <a href="cardiaque.php"><img src="assets/image/capteur/icon coeur.png" id="image4" class="floating-image" alt="Image flottante 4"></a>
     

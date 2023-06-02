@@ -39,6 +39,7 @@ if (isset($_POST['reg_user'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $birthdate = mysqli_real_escape_string($db, $_POST['birthdate']);
   $username = mysqli_real_escape_string($db, $_POST['username']);
+  $sexe = mysqli_real_escape_string($db, $_POST['sexe']);
 
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
@@ -53,6 +54,7 @@ if (isset($_POST['reg_user'])) {
   // by adding (array_push()) corresponding error unto $errors array
   if (empty($username)) { array_push($errors, "Identifiant nécessaire"); }
   if (empty($email)) { array_push($errors, "Email nécessaire"); }
+  
   if (empty($password_1)) { array_push($errors, "Mot de passe nécessaire"); }
   if ($password_1 != $password_2) {
 	array_push($errors, "Les deux mots de passe ne sont pas identiques");
@@ -88,15 +90,16 @@ if (isset($_POST['reg_user'])) {
   	$password_crypted = md5($password_1);//encrypt the password before saving in the database
 
     $query1 = "INSERT INTO sensors (id,user_id)   VALUES('$id','$id')";
-    
-    $query2 =  "INSERT INTO users (id,username,age,birthdate, email, password) 
-  			  VALUES('$id','$username','$age','$birthdate', '$email', '$password_crypted')";
+    $id_medecin = $_SESSION["id"];
+    $query2 =  "INSERT INTO users (id,username,age,birthdate, sexe, email, id_medecin, password) 
+  			  VALUES('$id','$username','$age','$birthdate', '$sexe' , '$email', '$id_medecin', '$password_crypted')";
 
 
   	mysqli_query($db, $query1);
     mysqli_query($db, $query2);
   	$_SESSION['username'] = $username;
     $_SESSION['id'] = $id;
+    $_SESSION['email'] = $email;
   	$_SESSION['success'] = "Vous êtes connecté";
 
 
@@ -109,28 +112,25 @@ if (isset($_POST['reg_user'])) {
 
 
     
-    $mail = new PHPMailer();
+    $mail = new PHPMailer(true);
     $mail->IsSMTP();
-    $mail->Host = 'smtp.laposte.net';               //Adresse IP ou DNS du serveur SMTP
+    $mail->Host = 'smtp.gmail.com';               //Adresse IP ou DNS du serveur SMTP
     $mail->Port = 465;                          //Port TCP du serveur SMTP
-    $mail->SMTPAuth = 1;                        //Utiliser l'identification
+    $mail->SMTPAuth = true;                        //Utiliser l'identification
 
-    if($mail->SMTPAuth){
-      $mail->SMTPSecure = 'ssl';               //Protocole de sécurisation des échanges avec le SMTP
-      $mail->Username   =  'vitashield@laposte.net';   //Adresse email à utiliser
-      $mail->Password   =  'Motd3p@ssecaca';         //Mot de passe de l'adresse email à utiliser
-    }
+    
+    $mail->SMTPSecure = 'ssl';               //Protocole de sécurisation des échanges avec le SMTP
+    $mail->Username   =  'vitashieldoff@gmail.com';   //Adresse email à utiliser
+    $mail->Password   =  'jjjwddafpfqiyrkm';         //Mot de passe de l'adresse email à utiliser
+    $mail->setFrom("vitashieldoff@gmail.com");
 
     $mail->Subject    =  'Creation de compte VitaShield';                      //Le sujet du mail
     $mail->WordWrap   = 50; 			                   //Nombre de caracteres pour le retour a la ligne automatique
     $mail->Body = $message_mail; 	       //Texte brut
     $mail->IsHTML(false);   
 
+    $mail->AddAddress($email);
 
-    $list_emails_to = array($email);
-    foreach ($list_emails_to  as $key => $to_send) {
-      $mail->AddAddress($to_send);
-    }
 
 
     if (!$mail->send()) {
@@ -146,6 +146,7 @@ if (isset($_POST['reg_user'])) {
 
 // Page de connexion
 if (isset($_POST['login_user'])) {
+  
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
   
@@ -167,12 +168,27 @@ if (isset($_POST['login_user'])) {
   	  $_SESSION['username'] = "$username";
   	  $_SESSION['success'] = "Vous êtes connecté";
 
+      $query  = "SELECT cond_accepte FROM users WHERE username = '$username'";
+      $result = mysqli_query($db, $query);
+      $result =  mysqli_fetch_assoc($result);
+      $cond_accepte = $result["cond_accepte"];
+
+
+
+
+
       $query  = "SELECT id FROM users WHERE username = '$username'";
       $result = mysqli_query($db, $query);
       $result =  mysqli_fetch_assoc($result);
       $id = $result["id"];
+      $_SESSION["id"]=$id;
+      $query  = "SELECT email FROM users WHERE username = '$username'";
+      $result = mysqli_query($db, $query);
+      $result =  mysqli_fetch_assoc($result);
+      $email = $result["email"];
 
-      $_SESSION['id'] = $id;
+
+      $_SESSION['email'] = $email;
 
 
       
@@ -184,7 +200,14 @@ if (isset($_POST['login_user'])) {
       if ($medecin==1){
         header('location: medecin_choose.php');
       }
-      else {header('location: capteur.php');}
+      else {
+        if($cond_accepte == 0) {
+        
+          header('location: cgu.php');
+        }
+        else{
+        header('location: capteur.php');}
+      }
 
       
   	  
@@ -253,9 +276,50 @@ if (isset($_POST['user_edit'])) {
 }
 
 
+// FAQ mail sent
+if (isset($_POST['requete'])) {
+  
+
+
+  $message_mail = $_POST["content"];
+
+  $username  = $_SESSION["username"];
+  $email =  $_SESSION["email"];
+
+  $message_mail = $message_mail . "
+  
+  from : $username
+  contact  :  $email";
+
+  $mail = new PHPMailer(true);
+  $mail->IsSMTP();
+  $mail->Host = 'smtp.gmail.com';               //Adresse IP ou DNS du serveur SMTP
+  $mail->Port = 465;                          //Port TCP du serveur SMTP
+  $mail->SMTPAuth = true;                        //Utiliser l'identification
+
+
+  $mail->SMTPSecure = 'ssl';               //Protocole de sécurisation des échanges avec le SMTP
+  $mail->Username   =  'vitashieldoff@gmail.com';   //Adresse email à utiliser
+  $mail->Password   =  'jjjwddafpfqiyrkm';         //Mot de passe de l'adresse email à utiliser
+  $mail->setFrom("vitashieldoff@gmail.com");
+
+  $mail->Subject    =  $_POST["object"];                      //Le sujet du mail
+  $mail->WordWrap   = 50; 			                   //Nombre de caracteres pour le retour a la ligne automatique
+  $mail->Body = $message_mail; 	       //Texte brut
+  $mail->IsHTML(false);   
+
+  $mail->AddAddress('vitashieldoff@gmail.com');
 
 
 
+  if (!$mail->send()) {
+  $_SESSION["mail_sent"]=$mail->ErrorInfo;
+  } else{
+  $_SESSION["mail_sent"]="Votre message a bien été envoyé. Vous recevrez une réponse d'ici peu.";
+  }
+
+
+}
 
 
 
