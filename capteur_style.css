@@ -2,31 +2,17 @@
 
 
 body{
+	
 	background-image: url('assets/image/capteur/background.png');
 	background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+
 }
 
 
 
-header {
-	
-	position:  absolute;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #ffffff;
-	padding: 10px;
-	width: 100%;
-	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  
 
-  .logo img {
-	height: 40px;
-  }
  
 
 
