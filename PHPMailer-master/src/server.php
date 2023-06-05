@@ -8,7 +8,7 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
 
 require 'Exception.php';
 require 'PHPMailer.php';
-require 'src\SMTP.php';
+require 'SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
