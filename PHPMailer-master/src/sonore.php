@@ -47,7 +47,7 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
     <div class="container">
         <div class="item large">
             <H2 text_fr="Environnement sonore" text_esp="Entorno sonoro" >Environnement sonore</H2>
-            <p> <strong><?php
+             <strong><?php
             $id = $_SESSION["id"];
             $query  = "SELECT valeur_instant_sonore FROM sensors WHERE id = '$id'";
             $result = mysqli_query($db, $query);
@@ -55,7 +55,7 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
             echo $result_str["valeur_instant_sonore"];
 
         ?>
-        </strong>dB </p>
+        </strong><p>dB </p>
         </div>
         <div class="item">
             <H2 text_fr="Maximum conseillé" text_esp="Maximum conseillé">Maximum conseillé</H2>
