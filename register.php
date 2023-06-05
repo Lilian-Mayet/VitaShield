@@ -23,6 +23,10 @@
   	  <input type="email" name="email" value="<?php echo $email; ?>">
   	</div>
 	  <div class="input-group">
+  	  <label>Telephone</label>
+  	  <input type="tel" name="tel">
+  	</div>
+	  <div class="input-group">
   	  <label>Votre date de naissance</label>
   	  <input type="date" min="1900-01-01" max="2022-12-31" name="birthdate" value="<?php echo $birthdate; ?>">
   	</div>

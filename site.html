@@ -2,6 +2,7 @@
 
     <head>
         <title>VITASHIELD</title>
+        <meta charset="utf8">
         <link rel="stylesheet" type="text/css" href="styleSite.css">
       </head>
      
@@ -14,9 +15,8 @@
     <div id="butAndDesc">
     <div id="buttons">
       <ul>
-        <li><a href="entreprise.html" onmouseenter="descToEntreprise()" onmouseleave="descEmpty()" >Entreprise</a></li>
-        <li><a href="produits.html" onmouseenter="descToProduits()" onmouseleave="descEmpty()">Produits</a></li>
-        <li><a href="faq.html" onmouseenter="descToFAQ()" onmouseleave="descEmpty()">FAQ</a></li>
+
+        <li><a href="faq_no_co.html" onmouseenter="descToFAQ()" onmouseleave="descEmpty()" id="faq">FAQ</a></li>
       </ul>
     </div>
     <p id="descriptionBoutonText"></p>
@@ -25,30 +25,32 @@
   
 
     <div class="menu" id="allCapteur">
-      <a href="#">Notre Coque</a>
+      <a href="#" id="coque">Notre Coque</a>
       <ul>
-        <li><a href="#" onclick="toCardiaque()" >Capteur cardiaque</a></li>
+        <li><a href="#" onclick="toCardiaque() "   >Capteur cardiaque</a></li>
         <li><a href="#" onclick="toTemperature()"  >Capteur de température</a></li>
         <li><a href="#" onclick="toLED()" >LED RGB personnalisable</a></li>
         <li><a href="#" onclick="toSON()" >Capteur son</a></li>
       </ul>
     </div>
 
+    <div id="butAndDesc">
+    <div  id="button">
+      <ul style="list-style: none;">
+        <li><a href="login.php" ><img style="width: 50px; height: auto;"   src="assets/image/icon connexion.png"></a></li>
+      </ul>
+    </div>
 
-    <div class="container" id="icon">
-        <ul>
-        <li><a href="http://localhost/vitashield/VitaShield/login.php"><img src="assets/image/icon connexion.png" alt="connexion"></a></li>
-        <li><img src="assets/image/icon loupe.png" alt="recherche"></li>
-        <li><img src="assets/image/icon cart.png" alt="panier"></li>
-        </ul>
-      </div>
+  </div>
+
+
       <div class="colonneLangue">
         <img src="assets/image/langue/france.png" onclick="toFrancais()" alt="france">
         <img src="assets/image/langue/anglais.png" onclick="toAnglais()" alt="anglais">
         <img src="assets/image/langue/espagnol.png" onclick="toEspagnol()"  alt="espagnol">
       </div>
-      
-    
+   
+
   </header>
 
   
@@ -137,6 +139,10 @@
         descr.push(descrEN)
         descr.push(descrESP)
 
+        var coque = ["Notre coque","Our phonecase",  "Nuestra funda de teléfono"  ];
+        var faq = ["FAQ",  "FAQ","preguntas más frecuentes"  ];
+        
+
       var decouvr = ["Découvrir","Discover","Descubrir"];
       
 
@@ -169,6 +175,9 @@
           document.querySelector("#titleText").innerText = titre[langue][currentImage];
           document.querySelector("#descrText").innerText = descr[langue][currentImage];
           document.querySelector("#decouvrirText").innerText = decouvr[langue];
+          document.querySelector("#decouvrirText").innerText = decouvr[langue];
+          document.querySelector("#coque").innerText = coque[langue];
+          document.querySelector("#faq").innerText = faq[langue];
         }
         
         function toFrancais(){
@@ -213,14 +222,17 @@
         function descEmpty(){
           document.querySelector("#descriptionBoutonText").innerText = "";
         }
-        function descToEntreprise(){
-          document.querySelector("#descriptionBoutonText").innerText = "Un appercu de notre équipe d'ingénieurs motivés!";
-        }
-        function descToProduits(){
-          document.querySelector("#descriptionBoutonText").innerText = "Aucune idée de quoi écrire ici";
-        }
+
         function descToFAQ(){
-          document.querySelector("#descriptionBoutonText").innerText = "Notre équipe est disponible pour répondre à toutes vos questions!";
+          if (langue==0){
+            document.querySelector("#descriptionBoutonText").innerText = "Notre équipe est disponible pour répondre à toutes vos questions!";
+          }
+          if (langue==1){
+            document.querySelector("#descriptionBoutonText").innerText = "Our team is available to answer all your questions!";
+          }
+          if (langue==2){
+            document.querySelector("#descriptionBoutonText").innerText = "¡Nuestro equipo está disponible para responder a todas sus preguntas!";
+          }
         }
 
 

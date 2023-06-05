@@ -17,7 +17,30 @@ function calculerAge($dateNaissance) {
   $diff = date_diff(date_create($dateNaissance), date_create($dateActuelle));
   return $diff->format('%y');
 }
+function verifierMotDePasse($motDePasse) {
+  // Vérifier la longueur du mot de passe
+  if (strlen($motDePasse) < 8) {
+      return false;
+  }
 
+  // Vérifier la présence d'au moins 1 chiffre
+  if (!preg_match("/\d/", $motDePasse)) {
+      return false;
+  }
+
+  // Vérifier la présence d'au moins 1 majuscule
+  if (!preg_match("/[A-Z]/", $motDePasse)) {
+      return false;
+  }
+
+  // Vérifier la présence d'au moins 1 caractère spécial
+  if (!preg_match("/\W/", $motDePasse)) {
+      return false;
+  }
+
+  // Si toutes les conditions sont satisfaites, le mot de passe est valide
+  return true;
+}
 
 // Initialisation
 $username = "";
@@ -40,6 +63,7 @@ if (isset($_POST['reg_user'])) {
   $birthdate = mysqli_real_escape_string($db, $_POST['birthdate']);
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $sexe = mysqli_real_escape_string($db, $_POST['sexe']);
+  $telephone = mysqli_real_escape_string($db, $_POST['tel']);
 
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
@@ -54,7 +78,10 @@ if (isset($_POST['reg_user'])) {
   // by adding (array_push()) corresponding error unto $errors array
   if (empty($username)) { array_push($errors, "Identifiant nécessaire"); }
   if (empty($email)) { array_push($errors, "Email nécessaire"); }
+  if (empty($telephone)) { array_push($errors, "Numéro de téléphone nécessaire"); }
   
+  if (!verifierMotDePasse($password_1) ) {array_push($errors, "Mot  de passe : 8 charactères minimum, au moins 1 chiffre et 1 majuscule");}
+
   if (empty($password_1)) { array_push($errors, "Mot de passe nécessaire"); }
   if ($password_1 != $password_2) {
 	array_push($errors, "Les deux mots de passe ne sont pas identiques");
@@ -91,16 +118,13 @@ if (isset($_POST['reg_user'])) {
 
     $query1 = "INSERT INTO sensors (id,user_id)   VALUES('$id','$id')";
     $id_medecin = $_SESSION["id"];
-    $query2 =  "INSERT INTO users (id,username,age,birthdate, sexe, email, id_medecin, password) 
-  			  VALUES('$id','$username','$age','$birthdate', '$sexe' , '$email', '$id_medecin', '$password_crypted')";
+    $query2 =  "INSERT INTO users (id,username,age,birthdate, sexe, telephone,email, id_medecin, password) 
+  			  VALUES('$id','$username','$age','$birthdate', '$sexe' ,'$telephone', '$email', '$id_medecin', '$password_crypted')";
 
 
   	mysqli_query($db, $query1);
     mysqli_query($db, $query2);
-  	$_SESSION['username'] = $username;
-    $_SESSION['id'] = $id;
-    $_SESSION['email'] = $email;
-  	$_SESSION['success'] = "Vous êtes connecté";
+
 
 
 
@@ -140,7 +164,7 @@ if (isset($_POST['reg_user'])) {
   }
 
   
-  	header('location: capteur.php');
+  	header('location: medecin_choose.php');
   }
 }
 

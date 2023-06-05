@@ -2,8 +2,10 @@
 <html>
 <head>
 	<title>Mon super titre</title>
+  <meta charset="utf8">
 	<link rel="stylesheet" type="text/css" href="all_capteur.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </head>
 <body>
 	<header>
@@ -12,24 +14,23 @@
                 
 
         <ul class="titleIcon">
-            <li class="listTitle"><h1>LED RGB</h1></li>
+            <li class="listTitle"><h1  text_fr="LED RGB" text_esp="LED RGB" >LED RGB</h1></li>
             <li class="listTitle"><img class="icon_img_led" src="assets/image/capteur/icon led.png" alt="capteur"></li>
 
         </ul>
 		<nav>
 			<ul>
-				<li><a href="sonore.html">Capteur sonore</a></li>
-				<li><a href="cardiaque.html">Capteur cardiaque</a></li>
-				<li><a href="#">Capteur particules</a></li>
-				<li><a href="temperaure.html">Capteur temperature</a></li>
+				<li><a href="sonore.php" text_fr="Capteur sonore" text_esp="Sensor de sonido" >Capteur sonore</a></li>
+				<li><a href="cardiaque.php"  text_fr="Capteur cardiaque" text_esp="Sensor cardíaco " >Capteur cardiaque</a></li>
+				<li><a href="particules.php" text_fr="Capteur particules" text_esp="Sensor de partículas" >Capteur particules</a></li>
+				<li><a href="temperature.php" text_fr="Capteur température" text_esp="Sensor de temperatura">Capteur temperature</a></li>
 			</ul>
 		</nav>
     </div>
-
     <div class="image-container">
-        <img src="assets/image/icon/user.png" alt="image1">
-        <img src="assets/image/icon/setting.png" alt="image2">
-      </div>
+      <button onclick="traduire('français')"  text_fr="Français" text_esp="Français">Français</button>
+      <button onclick="traduire('espagnol')" text_fr="Español" text_esp="Español">Español</button>
+        </div>
         
 	</header>
 	
@@ -39,25 +40,25 @@
             <div class = "choice_capteur">
             <div class="ligne_choix">
                 <img src="assets/image/capteur/icon coeur.png" alt="Image 1">
-                <p>Texte de la ligne 1</p>
+                <p>cardiaque</p>
                 <input type="radio" name="option" id="option1">
                
               </div>
               <div class="ligne_choix">
                 <img src="assets/image/capteur/icon dust.png" alt="Image 2">
-                <p>Texte de la ligne 2</p>
+                <p>particules</p>
                 <input type="radio" name="option" id="option2">
                 
               </div>
               <div class="ligne_choix">
                 <img src="assets/image/capteur/icon son.png" alt="Image 3">
-                <p>Texte de la ligne 3</p>
+                <p>son</p>
                 <input type="radio" name="option" id="option3">
              
               </div>
               <div class="ligne_choix">
                 <img src="assets/image/capteur/icon temperature.png" alt="Image 4">
-                <p>Texte de la ligne 4</p>
+                <p>temperature</p>
                 <input type="radio" name="option" id="option4">
                 
               </div>
@@ -91,6 +92,26 @@
 	
 
       <script>
+
+function traduire(langue) {
+    var elements = document.querySelectorAll("p, h1, h2, h3, button, title, a, label, option");
+    
+    if (langue === "espagnol") {
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var texte = element.getAttribute("text_esp");
+            element.innerHTML = texte;
+        }
+    } else if (langue === "français") {
+        for (var i = 0; i < elements.length; i++) {
+            var element = elements[i];
+            var texte = element.getAttribute("text_fr");
+            element.innerHTML = texte;
+        }
+    }
+
+
+
 const choix = document.getElementsByName('option'); // Récupération de tous les éléments ayant le nom "choix"
 
 for (let i = 0; i < choix.length; i++) { // Parcours de tous les éléments

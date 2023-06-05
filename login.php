@@ -24,7 +24,7 @@
   		<button type="submit" class="btn" name="login_user">S'identifier</button>
   	</div>
   	<p>
-  		Pas encore membre? <a href="register.php">S'inscrire</a>
+  		Pas encore membre? <a href="https://www.ameli.fr/">Contact ton medecin traitant pour faire une demande</a>
   	</p>
   </form>
 </body>
