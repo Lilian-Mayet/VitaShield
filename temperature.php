@@ -30,7 +30,7 @@ $db = mysqli_connect('localhost', 'root', '', 'project');
         </ul>
 		<nav>
 			<ul>
-				<li><a href="sonore.php" text_fr="Capteur sonore" text_esp="Sensor de sonido ;" >Capteur sonore</a></li>
+				<li><a href="sonore.php" text_fr="Capteur sonore" text_esp="Sensor de sonido" >Capteur sonore</a></li>
 				<li><a href="cardiaque.php" text_fr="Capteur cardiaque" text_esp="Sensor cardíaco">Capteur cardiaque</a></li>
 				<li><a href="#" text_fr="Capteur particules" text_esp="Sensor de partículas">Capteur particules</a></li>
 				<li><a href="#" text_fr="LED" text_esp="LED">LED</a></li>
