@@ -1,0 +1,267 @@
+<header>
+
+    <head>
+        <title>VITASHIELD</title>
+        <meta charset="utf8">
+        <link rel="stylesheet" type="text/css" href="styleSite.css">
+      </head>
+     
+    <div id="logo">
+      <img src="assets/image/logo vita shield.png" alt="Logo de votre entreprise">
+    </div>
+
+ 
+
+    <div id="butAndDesc">
+    <div id="buttons">
+      <ul>
+
+        <li><a href="faq_no_co.html" onmouseenter="descToFAQ()" onmouseleave="descEmpty()" id="faq">FAQ</a></li>
+      </ul>
+    </div>
+    <p id="descriptionBoutonText"></p>
+    </div>
+    
+  
+
+    <div class="menu" id="allCapteur">
+      <a href="#" id="coque">Notre Coque</a>
+      <ul>
+        <li><a href="#" onclick="toCardiaque() "   >Capteur cardiaque</a></li>
+        <li><a href="#" onclick="toTemperature()"  >Capteur de température</a></li>
+        <li><a href="#" onclick="toLED()" >LED RGB personnalisable</a></li>
+        <li><a href="#" onclick="toSON()" >Capteur son</a></li>
+      </ul>
+    </div>
+
+    <div id="butAndDesc">
+    <div  id="button">
+      <ul style="list-style: none;">
+        <li><a href="login.php" ><img style="width: 50px; height: auto;"   src="assets/image/icon connexion.png"></a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+      <div class="colonneLangue">
+        <img src="assets/image/langue/france.png" onclick="toFrancais()" alt="france">
+        <img src="assets/image/langue/anglais.png" onclick="toAnglais()" alt="anglais">
+        <img src="assets/image/langue/espagnol.png" onclick="toEspagnol()"  alt="espagnol">
+      </div>
+   
+
+  </header>
+
+  
+
+  <body>
+    <div id="image-container">
+      
+      <img id="imagePres"  src="assets/image/acceuil/img1.png", alt="Image">
+
+      <p id="titleText">Rejoignez la #VITATEAM</p>
+      <p id="descrText">Créez votre compte VITASHIELD et bénéficiez d’avantages exclusifs</p>
+      <p id="decouvrirText">Découvrir</p>
+      <div class="arrow arrow-left" onclick="prevImage()"></div>
+      <div class="arrow arrow-right" onclick="nextImage()"></div>
+    </div>
+
+   
+
+
+    <script>
+      launchHalo();
+        var images = [
+          "assets/image/acceuil/img1.png",
+          "assets/image/acceuil/img2.png",
+          "assets/image/acceuil/img3.png",
+          "assets/image/acceuil/img4.png",
+          "assets/image/acceuil/img5.png",
+        ];
+
+        var titre = [ ];
+
+
+        var titreFR = [
+        "Rejoignez la #VITATEAM",
+          "Le capteur cardiaque",
+          "Le capteur d’humidité et de température",
+          "La LED RGB Personalisable",
+          "Le capteur son",
+        ]
+
+        var titreEN = [
+        "Join the #VITATEAM",
+          "The heart sensor",
+          "The humidity and temperature sensor",
+          "The Customizable RGB LED",
+          "The sound sensor",
+        ]
+
+        var titreESP = [
+        "Únete al #VITATEAM",
+          "El sensor del corazón",
+          "El sensor de humedad y temperatura",
+          "El LED RGB personalizable",
+          "El sensor de sonido",
+        ]
+
+        titre.push(titreFR);
+        titre.push(titreEN);
+        titre.push(titreESP)
+
+        var descr = [];
+
+        var descrFR = [
+        "Créez votre compte VITASHIELD et bénéficiez d’avantages exclusifs",
+          "Une technologie de pointe conçue par nos ingénieurs",
+          "Des données précises traitées en temps réel sur une portée réduite à l’utilisateur",
+          "Une led RBG 100% personnalisable,pour des informations en tant réel.",
+          "Capable d’avertir l’utilisateur si des bruits nuisibles l’entourent",
+        ];
+        var descrEN = [
+        "Create your VITASHIELD account and benefit from exclusive advantages",
+          "Advanced technology designed by our engineers",
+          "Precise data processed in real time over a reduced range to the user",
+          "A 100% customizable RBG LED, for real-time information.",
+          "Able to warn the user if harmful noises surround him",
+        ];
+        var descrESP = [
+        "Crea tu cuenta VITASHIELD y benefíciate de ventajas exclusivas",
+          "Tecnología avanzada diseñada por nuestros ingenieros",
+          "Datos precisos procesados ​​en tiempo real en un rango reducido para el usuario",
+          "Un LED RBG 100% personalizable, para información en tiempo real.",
+          "Capaz de advertir al usuario si le rodean ruidos nocivos",
+        ];
+
+        descr.push(descrFR)
+        descr.push(descrEN)
+        descr.push(descrESP)
+
+        var coque = ["Notre coque","Our phonecase",  "Nuestra funda de teléfono"  ];
+        var faq = ["FAQ",  "FAQ","preguntas más frecuentes"  ];
+        
+
+      var decouvr = ["Découvrir","Discover","Descubrir"];
+      
+
+        
+        var currentImage = 0;
+        var langue = 0;
+        
+        function nextImage() {
+          currentImage++;
+          if (currentImage >= images.length) {
+            currentImage = 0;
+          }
+          document.querySelector("#imagePres").src = images[currentImage];
+          updateText();
+          launchHalo();
+        }
+        
+        function prevImage() {
+          currentImage--;
+          if (currentImage < 0) {
+            currentImage = images.length - 1;
+          }
+          document.querySelector("#imagePres").src = images[currentImage];
+          updateText();
+          launchHalo();
+        }
+
+
+        function updateText() {
+          document.querySelector("#titleText").innerText = titre[langue][currentImage];
+          document.querySelector("#descrText").innerText = descr[langue][currentImage];
+          document.querySelector("#decouvrirText").innerText = decouvr[langue];
+          document.querySelector("#decouvrirText").innerText = decouvr[langue];
+          document.querySelector("#coque").innerText = coque[langue];
+          document.querySelector("#faq").innerText = faq[langue];
+        }
+        
+        function toFrancais(){
+          langue = 0;
+          updateText();
+        } 
+        function toAnglais(){
+          langue = 1;
+          updateText();
+        }
+        function toEspagnol(){
+          langue = 2;
+          updateText();
+        }
+
+
+        function toCardiaque(){
+          currentImage = 1;
+          document.querySelector("#imagePres").src = images[currentImage];
+          updateText();
+          launchHalo();
+        }
+        function toTemperature(){
+          currentImage = 2;
+          document.querySelector("#imagePres").src = images[currentImage];
+          updateText();
+          launchHalo();
+        }
+        function toLED(){
+          currentImage = 3;
+          document.querySelector("#imagePres").src = images[currentImage];
+          updateText();
+          launchHalo();
+        }
+        function toSON(){
+          currentImage = 4;
+          document.querySelector("#imagePres").src = images[currentImage];
+          updateText();
+          launchHalo();
+        }
+
+        function descEmpty(){
+          document.querySelector("#descriptionBoutonText").innerText = "";
+        }
+
+        function descToFAQ(){
+          if (langue==0){
+            document.querySelector("#descriptionBoutonText").innerText = "Notre équipe est disponible pour répondre à toutes vos questions!";
+          }
+          if (langue==1){
+            document.querySelector("#descriptionBoutonText").innerText = "Our team is available to answer all your questions!";
+          }
+          if (langue==2){
+            document.querySelector("#descriptionBoutonText").innerText = "¡Nuestro equipo está disponible para responder a todas sus preguntas!";
+          }
+        }
+
+
+        function launchHalo(){
+          var numHalos = 50;
+          
+          // Boucle pour générer les halos
+          for (var i = 0; i < numHalos; i++) {
+            var halo = document.createElement("div");
+            halo.className = "halo";
+            halo.style.top = Math.random() * 180 + "%";
+            halo.style.left = Math.random() * 100 + "%";
+            halo.style.width = Math.random() * 100 + "px";
+            halo.style.height = halo.style.width;
+            halo.style.backgroundColor = "white";
+            document.body.appendChild(halo);
+
+            halo.addEventListener("animationend", function() {
+                this.parentNode.removeChild(this);
+              });
+          }
+
+        }
+      
+
+
+
+
+      </script>
+    </body>
+  </html>
+

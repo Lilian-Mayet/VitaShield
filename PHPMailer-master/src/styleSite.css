@@ -1,0 +1,302 @@
+/* Styles pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styles pour l'en-tête */
+  header {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  /* Styles pour le logo */
+  #logo img {
+    height: 50px;
+    width: auto;
+  }
+  
+
+
+
+  .colonneLangue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .colonneLangue img {
+    height: 20px;
+    width: 32px;
+    margin: 5;
+    border: 2px solid black;
+  }
+  .colonneLangue img:hover {
+    height: 30px;
+    width: 45px;
+ 
+  }
+
+
+
+
+  
+  #descriptionBoutonText {
+    margin-top: 20;
+    text-align: center;
+    white-space:normal;
+    width:300px
+  }
+
+
+  /* Styles pour les boutons */
+
+
+  #buttons ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  #buttons li {
+    margin-right: 20px;
+  }
+  
+  #buttons li:last-child {
+    margin-right: 20;
+  }
+  
+  #buttons a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 20px;
+    padding-bottom: 20
+  }
+  
+  #buttons a:hover {
+    background-color: #eee;
+    
+  }
+
+ 
+
+  #allCapteur a:hover{
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+
+
+
+  .menu {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu ul {
+    
+    position: absolute;
+    top: 100%;
+    left: -999em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: rgba(113,161,190, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    display: none;
+    flex-direction: column;
+  }
+  
+  .menu li {
+    position: relative;
+    display: block;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .menu:hover ul {
+    display: flex;
+    flex-direction: column;
+    left:0 ;
+  }
+
+  
+
+/* Styles pour les boutons */
+  #icon img {
+    height: 30px;
+    width: auto;
+  }
+
+  #icon ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  #icon li {
+    margin-right: 20px;
+  }
+  
+  #icon li:last-child {
+    margin-right: 10;
+  }
+  
+  #icon img:hover{
+    background-color: #71A1BE;
+  }
+
+  /* container class*/
+  .container {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+
+
+
+  /*style image et arrow*/
+  #image-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  #image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    width:100%;
+    transition: opacity 1s ease-in-out;
+    
+  }
+
+  #image-container img.active {
+    opacity: 1;
+  }
+
+
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(113, 161, 190, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .arrow:hover {
+    background-color: rgba(37, 110, 164, 0.5);
+  }
+  
+  .arrow-left {
+    left: 20px;
+  }
+  
+  .arrow-right {
+    right: 20px;
+  }
+
+
+
+
+  /* Container holding the image and the text */
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+ 
+  
+  /* titleText */
+  #titleText  {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+  }
+
+    /* titleText */
+    #descrText  {
+      position: absolute;
+      top: 40%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+  
+      font-size: 15px;
+      font-weight: bold;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+      color: #ffffff;
+
+      white-space:normal;
+      width:320px
+    }
+
+    #decouvrirText {
+      position: absolute;
+      top: 48%;
+      left: 28%;
+      transform: translate(-50%, -50%);
+  
+      font-size: 20px;
+      font-weight: bold;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      
+      border: 4px solid ;
+      border-color: #D29F58;
+      border-radius: 15px;
+      padding: 8px;
+
+    }
+
+    .halo {
+			position: absolute;
+			border-radius: 50%;
+			opacity: 0.5;
+			animation: halo 4s linear 1;
+		}
+    @keyframes halo {
+			0% {
+				transform: scale(0.2);
+				opacity: 0.5;
+			}
+			50% {
+				transform: scale(1.2);
+				opacity: 0;
+        
+        
+			}
+			100% {
+				transform: scale(2);
+				opacity: 0;
+        top : -1px;
+			}
+		}

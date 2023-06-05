@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mon super titre</title>
+	<link rel="stylesheet" type="text/css" href="all_capteur.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<header>
+        
+            <div class="title">
+                
+
+        <ul class="titleIcon">
+            <li class="listTitle"><h1>Capteur sonore</h1></li>
+            <li class="listTitle"><img class="icon_img" src="assets/image/capteur/icon son.png" alt="capteur"></li>
+
+        </ul>
+		<nav>
+			<ul>
+				<li><a href="cardiaque.html">Capteur cardiaque</a></li>
+				<li><a href="temperaure.html">Capteur température</a></li>
+				<li><a href="#">Capteur particules</a></li>
+				<li><a href="led.html">LED RGB</a></li>
+			</ul>
+		</nav>
+    </div>
+
+    <div class="image-container">
+        <img src="assets/image/icon/user.png" alt="image1">
+        <img src="assets/image/icon/setting.png" alt="image2">
+      </div>
+        
+	</header>
+	
+    <div class="container">
+        <div class="item large">
+            <H2>Environnement sonore</H2>
+            78 dB
+            
+        </div>
+        <div class="item">
+            <H2>Maximum conseillé</H2>
+            105 dB
+        </div>
+
+        <div class="item large">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="item">
+            <div class="color_info">
+                <div class="row">
+                  <div class="text_info">Dangeureux</div>
+                  <div class="square1"></div>
+                </div>
+                <div class="row">
+                  <div class="text_info">Normal</div>
+                  <div class="square2"></div>
+                </div>
+                <div class="row">
+                  <div class="text_info">Agréable</div>
+                  <div class="square3"></div>
+                </div>
+              </div>
+
+        </div>
+        <div class="item_edit">
+        <p class="edit_text">éditer seuil</p>
+        <button class = "edit_button ">edit</button>
+        </div>
+
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item large"></div>
+      </div>
+	
+
+     
+      <script>
+        const data = [71, 94, 88, 73, 49, 60, 77, 104, 94, 89, 52, 120, 45, 63, 42, 78,118];
+    
+        const config = {
+            type: 'line',
+            data: {
+                labels: ['8h',"8h30", '9h',"9h30", '10h',"10h30", '11h',"11h30", '12h',"12h30", "13h","13h30", '14h',"14h30", '15h',"15h30",'16h'],
+                datasets: [{
+                    label: 'Environnement sonore au cours de la journée',
+                    data: data,
+                    backgroundColor: 'blue',
+                    pointBackgroundColor: data.map(value => {
+                        if (value < 50) {
+                            return 'green';
+                        } else if (value > 105) {
+                            return 'red';
+                        } else {
+                            return 'blue';
+                        }
+                    })
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        };
+    
+        const myChart = new Chart(document.getElementById('myChart'), config);
+    </script>
+    
+
+
+
+
+</body>
+
+
+</html>

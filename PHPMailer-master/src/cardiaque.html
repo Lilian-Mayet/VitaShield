@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mon super titre</title>
+	<link rel="stylesheet" type="text/css" href="all_capteur.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<header>
+        
+            <div class="title">
+                
+
+        <ul class="titleIcon">
+            <li class="listTitle"><h1>Capteur cardiaque</h1></li>
+            <li class="listTitle"><img class="icon_img" src="assets/image/capteur/icon coeur.png" alt="capteur"></li>
+
+        </ul>
+		<nav>
+			<ul>
+				<li><a href="sonore.html">Capteur sonore</a></li>
+				<li><a href="temperaure.html">Capteur température</a></li>
+				<li><a href="#">Capteur particules</a></li>
+				<li><a href="led.html">LED RGB</a></li>
+			</ul>
+		</nav>
+    </div>
+
+    <div class="image-container">
+        <img src="assets/image/icon/user.png" alt="image1">
+        <img src="assets/image/icon/setting.png" alt="image2">
+      </div>
+        
+	</header>
+	
+    <div class="container">
+        <div class="item large">
+            <h1>84BPM</h1>
+        </div>
+        <div class="item">
+            <H2>BPM optimale</H2>
+            78
+        </div>
+
+        <div class="item large">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="item">
+            <div class="color_info">
+                <div class="row">
+                  <div class="text_info">Dangeureux</div>
+                  <div class="square1"></div>
+                </div>
+                <div class="row">
+                  <div class="text_info">Normal</div>
+                  <div class="square2"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="item_edit">
+            <p class="edit_text">éditer seuil</p>
+            <button class = "edit_button ">edit</button>
+            </div>
+        <div class="item small"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item large"></div>
+      </div>
+	
+
+      <script>
+        const data = [85,92,35,77,80,140,68,75,90];
+
+        const config = {
+            type: 'line',
+            data: {
+                labels: ['8h', '9h', '10h', '11h', '12h', '13h', '14h', '15h','16h'],
+                datasets: [{
+                label: 'BPM moyen',
+                data: data,
+                backgroundColor: 'blue',
+                pointBackgroundColor: data.map(value => {
+                        if (value < 50) {
+                            return 'red';
+                        } else if (value > 120) {
+                            return 'red';
+                        } else {
+                            return 'blue';
+                        }
+                    })
+
+
+                }]
+            },
+            options: {
+                scales: {
+                yAxes: [{
+                    ticks: {
+                    beginAtZero: true
+                    }
+                }]
+                }
+            }
+            };
+
+            const myChart = new Chart(document.getElementById('myChart'), config);
+
+
+
+      </script>
+
+
+
+
+</body>
+
+
+</html>
