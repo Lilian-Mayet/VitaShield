@@ -30,7 +30,7 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
 			<ul>
 				<li><a href="cardiaque.php">Capteur cardiaque</a></li>
 				<li><a href="temperature.php">Capteur température</a></li>
-				<li><a href="#">Capteur particules</a></li>
+				<li><a href="particules.php">Capteur particules</a></li>
 				<li><a href="led.html">LED RGB</a></li>
 			</ul>
 		</nav>

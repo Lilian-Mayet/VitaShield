@@ -34,7 +34,7 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
 			<ul>
 				<li><a href="sonore.php" text_fr="Capteur sonore" text_esp="Sensor de sonido" >Capteur sonore</a></li>
 				<li><a href="temperature.php" text_fr="Capteur température" text_esp="Sensor de temperatura">Capteur température</a></li>
-				<li><a href="#" text_fr="Capteur particules" text_esp="Sensor de partículas">Capteur particules</a></li>
+				<li><a href="particules.php" text_fr="Capteur particules" text_esp="Sensor de partículas">Capteur particules</a></li>
 				<li><a href="led.html" text_fr="LED RGB" text_esp="LED RGB">LED RGB</a></li>
 			</ul>
 		</nav>
