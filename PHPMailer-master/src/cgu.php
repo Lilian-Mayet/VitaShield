@@ -9,7 +9,7 @@ if (isset($_GET['accept'])) {
 
   WHERE username = '$username'";
   mysqli_query($db, $query);
-    header("location: capteur");
+    header("location: capteur.php");
 }
 
 
