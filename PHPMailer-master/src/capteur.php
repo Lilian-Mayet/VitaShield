@@ -52,8 +52,12 @@
     $message_mail = $message_mail .  "  
 
     mail : $email_user , 
-    telephone : $tel
-    ";
+    telephone : $tel,
+
+    site web : https://vitashield.herogu.garageisep.com/site.html
+    "
+    
+    ;
 
     $mail = new PHPMailer(true);
     $mail->IsSMTP();
