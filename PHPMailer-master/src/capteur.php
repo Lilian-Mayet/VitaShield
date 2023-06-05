@@ -165,7 +165,7 @@
 
      <a href = "faq.php"> <img src="assets/image/capteur/main image.png" class="center-image" id="center_image"  alt="Image principale"> </a>
   
-    <img src="assets/image/capteur/icon dust.png" id="image1" class="floating-image" alt="Image flottante 1">
+     <a href="particules.html"><img src="assets/image/capteur/icon dust.png" id="image1" class="floating-image" alt="Image flottante 1"></a>
     
     <a href="led.html"><img src="assets/image/capteur/icon led.png" id="image2" class="floating-image" alt="Image flottante 2"></a>
     
