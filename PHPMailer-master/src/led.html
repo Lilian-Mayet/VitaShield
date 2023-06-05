@@ -72,7 +72,7 @@
             <h2 style="text-decoration: underline;">Capteur actuel</h2>
             <div class ="ligne_choix" style="margin: 10px;">
             <img src="assets/image/capteur/icon son.png" id="img_capteur" >
-            <p id="text_capteur">capteur son</p>
+            
         </div>
         </div>
 
@@ -116,24 +116,23 @@ const choix = document.getElementsByName('option'); // Récupération de tous le
 
 for (let i = 0; i < choix.length; i++) { // Parcours de tous les éléments
   choix[i].addEventListener('click', function() { // Ajout d'un écouteur d'événements "click" à chaque élément
-    const text = document.getElementById('text_capteur');
+
     const image = document.getElementById('img_capteur'); // Récupération de l'élément img dans la div
     switch (i) { // Utilisation d'un switch pour changer l'image en fonction de la valeur de l'élément cliqué
       case 0:
         image.src = "assets/image/capteur/icon coeur.png";
-        text.innerText = "Capteur cardiaque";
+
         break;
       case 1:
         image.src = "assets/image/capteur/icon dust.png";
-        text.innerText = "Capteur particules";
+
         break;
       case 2:
         image.src = "assets/image/capteur/icon son.png";
-        text.innerText = "Capteur sonore";
+
         break;
       case 3:
         image.src = "assets/image/capteur/icon temperature.png";
-        text.innerText = "Capteur température";
         break;
 
       default:
