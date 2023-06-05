@@ -11,6 +11,7 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
 	<title>Mon super titre</title>
 	<link rel="stylesheet" type="text/css" href="all_capteur.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="traduction.js"></script>
 </head>
 <body>
 	<header>
@@ -19,19 +20,19 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
                 
 
         <ul class="titleIcon">
-            <li class="listTitle"><h1>Capteur sonore</h1></li>
+            <li class="listTitle"><h1 text_fr="Capteur sonore" text_esp="Sensor de sonido" >Capteur sonore</h1></li>
             <p class="welcome-message">
-        Welcome <strong><?php echo $_SESSION["username"]; ?></strong>
+        Bienvenue <strong><?php echo $_SESSION["username"]; ?></strong>
     </p>
             <li class="listTitle"><img class="icon_img" src="assets/image/capteur/icon son.png" alt="capteur"></li>
 
         </ul>
 		<nav>
 			<ul>
-				<li><a href="cardiaque.php">Capteur cardiaque</a></li>
-				<li><a href="temperature.php">Capteur température</a></li>
-				<li><a href="particules.php">Capteur particules</a></li>
-				<li><a href="led.html">LED RGB</a></li>
+				<li><a href="cardiaque.php" text_fr="Capteur cardiaque" text_esp="Sensor cardíaco">Capteur cardiaque</a></li>
+				<li><a href="temperature.php" text_fr="Capteur température" text_esp="Sensor de temperatura">Capteur température</a></li>
+				<li><a href="particules.php" text_fr="Capteur particules" text_esp="Sensor de partículas">Capteur particules</a></li>
+				<li><a href="led.html" text_fr="LED" text_esp="LED">LED RGB</a></li>
 			</ul>
 		</nav>
     </div>
@@ -45,7 +46,7 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
 	
     <div class="container">
         <div class="item large">
-            <H2>Environnement sonore</H2>
+            <H2 text_fr="Environnement sonore" text_esp="Entorno sonoro" >Environnement sonore</H2>
             <p> <strong><?php
             $id = $_SESSION["id"];
             $query  = "SELECT valeur_instant_sonore FROM sensors WHERE id = '$id'";
@@ -57,7 +58,7 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
         </strong>dB </p>
         </div>
         <div class="item">
-            <H2>Maximum conseillé</H2>
+            <H2 text_fr="Maximum conseillé" text_esp="Maximum conseillé">Maximum conseillé</H2>
             105 dB
         </div>
 
@@ -68,28 +69,21 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
         <div class="item">
             <div class="color_info">
                 <div class="row">
-                  <div class="text_info">Dangeureux</div>
+                  <div class="text_info" text_fr="Dangeureux" text_esp="Riesgoso">Dangeureux</div>
                   <div class="square1"></div>
                 </div>
                 <div class="row">
-                  <div class="text_info">Normal</div>
+                  <div class="text_info" text_fr="Normal" text_esp="Normal">Normal</div> 
                   <div class="square2"></div>
                 </div>
                 <div class="row">
-                  <div class="text_info">Agréable</div>
+                  <div class="text_info" text_fr="Agréable" text_esp="Agradable ">Agréable</div>
                   <div class="square3"></div>
                 </div>
               </div>
 
         </div>
-        <div class="item_edit">
-        <p class="edit_text">éditer seuil</p>
-        <button class = "edit_button ">edit</button>
-        </div>
 
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item large"></div>
       </div>
 	
 
