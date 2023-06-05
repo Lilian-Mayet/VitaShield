@@ -56,7 +56,7 @@ $birthdate = "1900-01-01";
 $age = 50;
 
 // Connexion à la database
-$db = mysqli_connect('localhost', 'root', '', 'project');
+$db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXRXWyBvVh3', 'HwKgNc7yDt_vitashield');
 
 $_SESSION["patient"]="";
 
