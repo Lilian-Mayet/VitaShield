@@ -168,7 +168,7 @@ Ce dernier avait constaté que beaucoup de personnes âgées ne pouvaient pas av
     <form  id = "form"  method="post" action="faq.php"  >  <!--onsubmit="submitForm(event)"-->
       <label for="question-type" text_fr="Nature de la requête" text_esp="Tipo de solicitud">Nature de la requête</label>
       <select id="question-type" name="object" value="<?php echo $object; ?>">
-        <option value="Ma montre ne fonctionne plus/pas" text_fr="Ma coque ne fonctionne plus/pas" text_esp="Mi funda no funciona">Ma coque ontre ne fonctionne plus/pas</option>
+        <option value="Ma montre ne fonctionne plus/pas" text_fr="Ma coque ne fonctionne plus/pas" text_esp="Mi funda no funciona">Ma coque ne fonctionne plus/pas</option>
         <option value="Question sur le fonctionnement" text_fr="Question sur le fonctionnement" text_esp="Preguntas sobre el funcionamiento ">Question sur le fonctionnement</option>
         <option value="Suggestion d'amélioration" text_fr="Suggestion d'amélioration" text_esp="Sugerencia de mejora ">Suggestion d'amélioration</option>
         <option value="Partenariat"  text_fr="Partenariat" text_esp=" Partenarios ">Partenariat</option>

@@ -57,7 +57,7 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
             echo $result_str["valeur_instant_particules"];
 
         ?>
-        </strong>  <p text_fr="BPM" text_esp="LPM">g.L</p>
+        </strong>  <p text_fr="g.L" text_esp="g.L">g.L</p>
         </div>
         <div class="item">
             <H2 text_fr="densité maximum" text_esp="densidad  máxima  ">densité maximum</H2>
