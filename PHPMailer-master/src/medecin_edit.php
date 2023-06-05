@@ -3,7 +3,7 @@ include('server.php');
 
 $id = $_SESSION["patient_id"];
 $patient_name = $_SESSION["patient"];
-$db = mysqli_connect('localhost', 'root', '', 'project');
+$db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXRXWyBvVh3', 'HwKgNc7yDt_vitashield');
 
 $query  = "SELECT * FROM users WHERE id = '$id'";
 $result = mysqli_query($db, $query);
