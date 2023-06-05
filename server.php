@@ -4,12 +4,15 @@ session_start();
 $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXRXWyBvVh3', 'HwKgNc7yDt_vitashield');
 
 
-require 'PHPMailer-master\src\Exception.php';
-require 'PHPMailer-master\src\PHPMailer.php';
-require 'PHPMailer-master\src\SMTP.php';
+//require 'PHPMailer-master\src\Exception.php';
+//require 'PHPMailer-master\src\PHPMailer.php';
+//require 'PHPMailer-master\src\SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 
 
