@@ -28,10 +28,10 @@
     <div class="menu" id="allCapteur">
       <a href="#" id="coque">Notre Coque</a>
       <ul>
-        <li><a href="#" onclick="toCardiaque() "   >Capteur cardiaque</a></li>
-        <li><a href="#" onclick="toTemperature()"  >Capteur de température</a></li>
-        <li><a href="#" onclick="toLED()" >LED RGB personnalisable</a></li>
-        <li><a href="#" onclick="toSON()" >Capteur son</a></li>
+        <li><a href="#" onclick="toCardiaque()" id="cardiaque_list"   >Capteur cardiaque</a></li>
+        <li><a href="#" onclick="toTemperature()"  id="temperature_list"  >Capteur de température</a></li>
+        <li><a href="#" onclick="toLED()" id="led_list" >LED RGB personnalisable</a></li>
+        <li><a href="#" onclick="toSON()"id="son_list" >Capteur son</a></li>
       </ul>
     </div>
 
@@ -179,6 +179,10 @@
           document.querySelector("#decouvrirText").innerText = decouvr[langue];
           document.querySelector("#coque").innerText = coque[langue];
           document.querySelector("#faq").innerText = faq[langue];
+          document.querySelector("#cardiaque_list").innerText = titre[langue][1];
+          document.querySelector("#temperature_list").innerText = titre[langue][2];
+          document.querySelector("#led_list").innerText = titre[langue][3];
+          document.querySelector("#son_list").innerText = titre[langue][4];
         }
         
         function toFrancais(){
