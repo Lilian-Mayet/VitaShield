@@ -85,7 +85,7 @@ if (isset($_POST['reg_user'])) {
   if (empty($email)) { array_push($errors, "Email nécessaire"); }
   if (empty($telephone)) { array_push($errors, "Numéro de téléphone nécessaire"); }
   
-  if (!verifierMotDePasse($password_1) ) {array_push($errors, "Mot  de passe : 8 charactères minimum, au moins 1 chiffre et 1 majuscule");}
+  if (!verifierMotDePasse($password_1) ) {array_push($errors, "Mot  de passe : 8 charactères minimum, au moins 1 chiffre et 1 majuscule, et 1 caractère special");}
 
   if (empty($password_1)) { array_push($errors, "Mot de passe nécessaire"); }
   if ($password_1 != $password_2) {

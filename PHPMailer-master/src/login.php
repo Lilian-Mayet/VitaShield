@@ -4,6 +4,7 @@
 <head>
   <title>Registration system PHP and MySQL</title>
   <link rel="stylesheet" type="text/css" href="login_register_style.css">
+  <script src="cursor.js"></script>
 </head>
 <body>
   <div class="header">

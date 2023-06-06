@@ -12,6 +12,7 @@ $db = mysqli_connect('herogu.garageisep.com', 'Cu7dIKBPWC_vitashield', 'CqT0EXXR
 	<link rel="stylesheet" type="text/css" href="all_capteur.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="traduction.js"></script>
+    <script src="cursor.js"></script>
 </head>
 <body>
 	<header>

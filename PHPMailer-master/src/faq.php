@@ -99,6 +99,7 @@ include('server.php');
       }
     }
   </script>
+  <script src="cursor.js"></script>
 </head>
 <body>
   <div class="container">

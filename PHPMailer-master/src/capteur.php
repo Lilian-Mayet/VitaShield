@@ -98,6 +98,8 @@
   <head>
     <title>Vitashield</title>
     <link rel="stylesheet" type="text/css" href="capteur_style.css">
+    <script src="cursor.js"></script>
+    
   </head>
 
 

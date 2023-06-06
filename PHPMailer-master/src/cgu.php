@@ -32,6 +32,7 @@ mysqli_query($db, $query);
 <head>
   <title text_fr="Conditions d'utilisation" text_esp="Términos y condiciones">Conditions d'utilisation</title>
   <script src="traduction.js"></script>
+  <script src="cursor.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
